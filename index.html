@@ -5,123 +5,68 @@
   <title>Para Daniela 💖</title>
   <style>
     body {
-      background-color: #b388eb;
+      background-color: #fff0f5;
       font-family: 'Segoe UI', sans-serif;
-      text-align: center;
       padding: 20px;
-      overflow: hidden;
+      text-align: center;
+      color: #6a1b9a;
       position: relative;
     }
 
     h1 {
-      color: #ffffff;
-      font-size: 2.5em;
-      text-shadow: 1px 1px 3px #6a1b9a;
+      font-size: 2em;
+      color: #d81b60;
+      text-shadow: 1px 1px 3px #c2185b;
     }
 
     p {
       font-size: 1.2em;
-      color: #fff;
-      max-width: 700px;
       margin: 20px auto;
-      text-shadow: 1px 1px 2px #4a148c;
+      max-width: 600px;
     }
 
-    .footer {
+    .pie {
       margin-top: 40px;
-      font-style: italic;
-      color: #f3e5f5;
-      text-shadow: 1px 1px 2px #6a1b9a;
+      font-size: 1em;
+      color: #880e4f;
     }
 
-    .heart {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Heart_corazón.svg/1024px-Heart_corazón.svg.png') no-repeat center;
-      background-size: contain;
-      animation: floatUp 6s linear infinite;
-      pointer-events: none;
+    @keyframes flotar {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100px); opacity: 0; }
     }
 
-    @keyframes floatUp {
-      0% {
-        transform: translateY(100vh) scale(0.5);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1.2);
-        opacity: 0;
-      }
-    }
-
-    .tap-heart {
-      position: absolute;
-      font-size: 24px;
-      animation: pop 1s ease-out forwards;
-      pointer-events: none;
-    }
-
-    @keyframes pop {
-      0% {
-        transform: scale(0.5);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(2);
-        opacity: 0;
-      }
+    @keyframes saltar {
+      0% { transform: scale(1) translateY(0); opacity: 1; }
+      50% { transform: scale(1.5) translateY(-50px); }
+      100% { transform: scale(0.5) translateY(-100px); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <h1>Para Daniela mi novia hermosa 🌷</h1>
+  <h1>Para Daniela mi novia hermosa 🌹</h1>
 
-  <p>
-    Cada día que pasa, me doy cuenta de lo afortunado que soy por tenerte en mi vida.  
-    Esta página es solo un pequeño gesto para recordarte cuánto te quiero y lo especial que eres para mí.
-  </p>
+  <p>Amorcito, esta página la he creado para ti con mucho esfuerzo y amor 💕</p>
 
-  <p>
-    Amorcito, esta página la he creado para ti con mucho esfuerzo. Sé que hace unos momentos no pude hacer nada por ti y sentía impotencia porque quería que no sufras. Me partías el corazón. Creo que mi amor por ti aumenta cada vez más y más, y cuando veo que suceden estas cosas siento unas ganas incontrolables de protegerte.
-  </p>
+  <p>Desde que soy el mejor novio del mundo, pero quiero ser aún mejor para ti 💖</p>
 
-  <p>
-    Yo no podré ser el mejor novio del mundo, pero quiero ser el mejor hombre que hayas tenido y tengas en tu vida para siempre. No creo que alguien haya hecho todo esto por ti jamás en el pasado, así que creo que seré el primero y el único que te dará este detalle tan especial. Si algún día algún baboso te dice algo fuera de lugar, como que tu novio no te quiere, solo recuerda este detalle maravilloso que te estoy dando y aumenta más tu amor por mí. Te amo, mi princesita bella hermosa.
-  </p>
+  <p>Te amo con todo mi corazón ❤️</p>
 
-  <div class="footer">
-    Con amor, Joel Antonio, tu novio hermoso .💗
-  </div>
+  <div class="pie">Con amor, Joel Antonio, tu novio hermoso. 💘</div>
 
-  <!-- Corazones flotando automáticamente -->
   <script>
-    function createFloatingHeart() {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.style.left = Math.random() * window.innerWidth + 'px';
-      heart.style.animationDuration = (4 + Math.random() * 4) + 's';
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 8000);
+    // Corazones flotantes
+    function crearCorazónFlotante() {
+      const corazón = document.createElement('div');
+      corazón.textContent = '💖';
+      corazón.style.position = 'absolute';
+      corazón.style.left = Math.random() * window.innerWidth + 'px';
+      corazón.style.top = Math.random() * window.innerHeight + 'px';
+      corazón.style.fontSize = '2rem';
+      corazón.style.opacity = '0.8';
+      corazón.style.animation = 'flotar 4s linear forwards';
+      document.body.appendChild(corazón);
+      setTimeout(() => corazón.remove(), 4000);
     }
 
-    setInterval(createFloatingHeart, 500);
-  </script>
-
-  <!-- Corazones que saltan al tocar -->
-  <script>
-    document.body.addEventListener('click', function(e) {
-      const tapHeart = document.createElement('div');
-      tapHeart.className = 'tap-heart';
-      tapHeart.textContent = '💖';
-      tapHeart.style.left = e.pageX + 'px';
-      tapHeart.style.top = e.pageY + 'px';
-      document.body.appendChild(tapHeart);
-      setTimeout(() => tapHeart.remove(), 1000);
-    });
-  </script>
-</body>
-</html>
+    setInterval(crearCorazónFlotante
