@@ -1,2 +1,0 @@
-# daniela-page
-Tu noviecito 
