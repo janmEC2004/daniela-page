@@ -21,18 +21,36 @@
 
     h1 {
       font-size: 2.5em;
-      color: #f8bbd0;
-      text-shadow: 2px 2px 5px #ad1457;
       margin-bottom: 20px;
+      background: linear-gradient(90deg, #f8bbd0, #ffffff, #f8bbd0);
+      background-size: 200% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: brilloTitulo 2s infinite;
     }
 
-    p {
+    @keyframes brilloTitulo {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    .escribir {
       font-size: 1.3em;
       margin: 15px auto;
       max-width: 700px;
       line-height: 1.6;
       color: #ede7f6;
       text-shadow: 1px 1px 3px #ad1457;
+      white-space: pre-wrap;
+      overflow: hidden;
+      border-right: .15em solid transparent;
+      animation: escribir 8s steps(200, end);
+    }
+
+    @keyframes escribir {
+      from { width: 0; }
+      to { width: 100%; }
     }
 
     .pie {
@@ -65,11 +83,13 @@
 <body>
   <h1>Para Daniela mi novia hermosa 🌹</h1>
 
-  <p>Amorcito, esta página la he creado para ti con mucho esfuerzo 💕</p>
+  <div class="escribir">
+Amorcito, esta página la he creado para ti con mucho esfuerzo 💕
 
-  <p>Amorcito, esta página la he creado para ti con mucho esfuerzo. Sé que hace unos momentos no pude hacer nada por ti y sentía impotencia porque quería que no sufras. Me partías el corazón. Creo que mi amor por ti aumenta cada vez más y más, y cuando veo que suceden estas cosas siento unas ganas incontrolables de protegerte.</p>
+Amorcito, esta página la he creado para ti con mucho esfuerzo. Sé que hace unos momentos no pude hacer nada por ti y sentía impotencia porque quería que no sufras. Me partías el corazón. Creo que mi amor por ti aumenta cada vez más y más, y cuando veo que suceden estas cosas siento unas ganas incontrolables de protegerte.
 
-  <p>Yo no podré ser el mejor novio del mundo, pero quiero ser el mejor hombre que hayas tenido y tengas en tu vida para siempre. No creo que alguien haya hecho todo esto por ti jamás en el pasado, así que creo que seré el primero y el único que te dará este detalle tan especial. Si algún día algún baboso te dice algo fuera de lugar, como que tu novio no te quiere, solo recuerda este detalle maravilloso que te estoy dando y aumenta más tu amor por mí. Te amo, mi princesita bella hermosa.</p>
+Yo no podré ser el mejor novio del mundo, pero quiero ser el mejor hombre que hayas tenido y tengas en tu vida para siempre. No creo que alguien haya hecho todo esto por ti jamás en el pasado, así que creo que seré el primero y el único que te dará este detalle tan especial. Si algún día algún baboso te dice algo fuera de lugar, como que tu novio no te quiere, solo recuerda este detalle maravilloso que te estoy dando y aumenta más tu amor por mí. Te amo, mi princesita bella hermosa.
+  </div>
 
   <div class="instruccion">Toca la pantalla para ver cómo salen corazones 💘✨</div>
 
