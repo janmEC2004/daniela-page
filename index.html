@@ -2,62 +2,126 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Te amo Daniela mi niña hermosa</title>
+  <title>Para Daniela 💖</title>
   <style>
     body {
-      background-color: #e6ccf2;
+      background-color: #b388eb;
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       padding: 20px;
+      overflow: hidden;
+      position: relative;
     }
-    .gallery {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 20px;
+
+    h1 {
+      color: #ffffff;
+      font-size: 2.5em;
+      text-shadow: 1px 1px 3px #6a1b9a;
     }
-    .gallery img {
-      width: 100px;
-      height: auto;
-      border-radius: 10px;
-    }
-    .message {
+
+    p {
       font-size: 1.2em;
-      color: #5a2d82;
+      color: #fff;
+      max-width: 700px;
       margin: 20px auto;
-      max-width: 600px;
+      text-shadow: 1px 1px 2px #4a148c;
     }
-    .hearts {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
+
+    .footer {
+      margin-top: 40px;
+      font-style: italic;
+      color: #f3e5f5;
+      text-shadow: 1px 1px 2px #6a1b9a;
     }
-    .hearts img {
-      width: 50px;
-      height: auto;
+
+    .heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Heart_corazón.svg/1024px-Heart_corazón.svg.png') no-repeat center;
+      background-size: contain;
+      animation: floatUp 6s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .tap-heart {
+      position: absolute;
+      font-size: 24px;
+      animation: pop 1s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0.5);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Te amo Daniela mi niña hermosa 💜</h1>
+  <h1>Para Daniela mi novia hermosa 🌷</h1>
 
-  <div class="gallery">
-    <img src="https://unsplash.com/es/fotos/un-campo-de-tulipanes-de-colores-en-un-parque-4BNPuprwiKs/download?force=true" alt="Tulipanes 1">
-    <img src="https://www.epuzzle.info/es/rompecabezas/jugar/naturaleza/2464-tulipanes-de-colores/download" alt="Tulipanes 2">
-    <img src="https://www.pinterest.com/pin/508554982897283137/" alt="Tulipanes 3">
+  <p>
+    Cada día que pasa, me doy cuenta de lo afortunado que soy por tenerte en mi vida.  
+    Esta página es solo un pequeño gesto para recordarte cuánto te quiero y lo especial que eres para mí.
+  </p>
+
+  <p>
+    Amorcito, esta página la he creado para ti con mucho esfuerzo. Sé que hace unos momentos no pude hacer nada por ti y sentía impotencia porque quería que no sufras. Me partías el corazón. Creo que mi amor por ti aumenta cada vez más y más, y cuando veo que suceden estas cosas siento unas ganas incontrolables de protegerte.
+  </p>
+
+  <p>
+    Yo no podré ser el mejor novio del mundo, pero quiero ser el mejor hombre que hayas tenido y tengas en tu vida para siempre. No creo que alguien haya hecho todo esto por ti jamás en el pasado, así que creo que seré el primero y el único que te dará este detalle tan especial. Si algún día algún baboso te dice algo fuera de lugar, como que tu novio no te quiere, solo recuerda este detalle maravilloso que te estoy dando y aumenta más tu amor por mí. Te amo, mi princesita bella hermosa.
+  </p>
+
+  <div class="footer">
+    Con amor, Joel Antonio, tu novio hermoso 💗
   </div>
 
-  <div class="message">
-    Daniela, no tengo mucho para darte, pero todo lo que hago es con amor. ❤️<br>
-    Cada pensamiento, cada detalle, cada palabra está llena de ti.<br>
-    Te amo con todo lo que soy, y siempre lo haré.
-  </div>
+  <!-- Corazones flotando automáticamente -->
+  <script>
+    function createFloatingHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
 
-  <div class="hearts">
-    <img src="https://www.freepik.es/vector-premium/concepto-minimo-corazon-amor-dibujado-mano-corazones-pequenos-ilustracion-vectorial_22886589.htm" alt="Corazón 1">
-    <img src="https://es.123rf.com/photo_40199854_peque%C3%B1as-y-grandes-iconos-del-coraz%C3%B3n-rojo-muestras-del-amor-aislados-sobre-fondo-blanco.html" alt="Corazón 2">
-    <img src="https://es.vecteezy.com/arte-vectorial/8944425-corazon-pequeno-en-forma-de-corazon-grande" alt="Corazón 3">
-  </div>
+    setInterval(createFloatingHeart, 500);
+  </script>
+
+  <!-- Corazones que saltan al tocar -->
+  <script>
+    document.body.addEventListener('click', function(e) {
+      const tapHeart = document.createElement('div');
+      tapHeart.className = 'tap-heart';
+      tapHeart.textContent = '💖';
+      tapHeart.style.left = e.pageX + 'px';
+      tapHeart.style.top = e.pageY + 'px';
+      document.body.appendChild(tapHeart);
+      setTimeout(() => tapHeart.remove(), 1000);
+    });
+  </script>
 </body>
 </html>
